@@ -3,5 +3,144 @@
 *::after {
     box-sizing: border-box;
 }
-/* font-family: 'Inter', sans-serif; */
-/* font-family: 'Merriweather', serif; */
+html {
+    scroll-behavior: smooth; 
+}
+
+body {
+    /* font-family: 'Merriweather', serif;*/
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;    
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+:root {
+    --color-gold: #bdae82;
+    --color-black: #000;
+    --font1: 60px;
+    --font2: 40px;
+}
+
+.container {
+    width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-container {    
+    display: flex;
+    justify-content: space-between;
+    height: 90px;    
+    background: url('../assets/img/header-bg.png');
+    background-repeat: no-repeat;
+    background-position: center 0;
+    align-items: center;
+}
+
+.logo {
+    transition: 0.3s;
+}
+
+.logo:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.menu {
+    width: 500px;
+    height: 50px;
+    margin-left: auto;
+    padding-right: 31px;
+    padding-left: 30px;  
+}
+
+.languages {
+    display: flex;
+    justify-content: space-between;
+    width: 70px;
+    height: 50px;
+    align-items: center;
+}
+
+.menu-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;   
+    list-style: none;
+}
+
+.menu-link {   
+    line-height: 50px;
+    transition: 0.3s;
+}
+
+
+.menu-link:hover {
+    color: var(--color-gold);
+}
+
+.en-link, .ru-link {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 50px;
+    transition: 0.3s;
+}
+
+.en-link:hover, .ru-link:hover {
+    color: var(--color-gold);
+}
+
+
+.hero-container {
+    height: 910px;
+    background-image: url('../assets/img/header-bg.png');
+    background-position: center -90px;
+    background-repeat: no-repeat;    
+}
+
+.hero {
+    padding-top: 160px;
+    padding-left: 60px;
+}
+
+.hero-inner {
+    width: 500px;
+    height: 330px;  
+}
+
+.hero-name {
+    margin: 0 0 10px 0;
+    font-family: 'Merriweather', serif;
+    font-size: 60px;
+    line-height: 120px;
+}
+
+.hero-text {
+    width: 470px;
+    height: 120px;
+    margin: 0 0 25px 0;
+    line-height: 40px;
+    font-family: inherit;
+}
+
+.hero-btn {
+    width: 219px;
+    height: 54px;
+    line-height: 40px;
+    font-family: inherit;
+    border: 0;
+    cursor: pointer;
+    background-color: var(--color-gold);
+    color: #000000;    
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    color: #FFFFFF;
+}
