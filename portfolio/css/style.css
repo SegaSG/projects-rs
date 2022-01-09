@@ -13,7 +13,7 @@ body {
     font-weight: 400;
     font-size: 20px;
     color: #FFFFFF;
-    background-color: #000000;   
+    background-color: green;   
 }
 
 a {
@@ -264,6 +264,10 @@ a {
 }
 
 /* section price */
+.price {
+    height: 745px;
+}
+
 .price-title {
     width: 142px;
 }
@@ -272,8 +276,9 @@ a {
     display: flex;
     justify-content: space-between;
     width: 1400px;
-    height: 505px;
+    height: 505px;    
 }
+
 .price-item {
     width: 450px;
     height: 505px;
@@ -313,3 +318,81 @@ a {
     line-height: 36px;
     margin: 0;
 }
+ /* section contacts */
+ .contacts {
+    background-image: url(../assets/img/contacts-bg.jpg);
+    background-size: auto 700px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 700px; 
+}
+
+.contacts-title {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 80px;
+    margin: 0;
+    color: var(--color-gold);
+}
+
+.contacts-content {
+    width: 450px;
+    height: 445px;
+    margin-left: auto;
+    padding-top: 60px;
+}
+.contacts-title{
+    width: 450px;
+    height: 80px;
+    margin-bottom: 40px;
+}
+
+.contacts-email {
+    width: 450px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border: 2px solid var(--color-gold);
+    background-color: transparent;
+}
+
+.contacts-tel {
+    width: 450px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border: 2px solid var(--color-gold);
+    background-color: transparent;
+}
+
+.contacts-message {
+    width: 450px;
+    height: 100px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-top: 10px;
+    border: 2px solid var(--color-gold);
+    background-color: transparent;
+    resize: none;
+}
+
+.contscts-email::placeholder {
+    padding-left: 20px;
+    font-family: inherit;
+    color: #bdae82;
+    font-size: 20px;
+}
+
+.contscts-tel::placeholder {
+    font-family: inherit;
+    color: #bdae82;
+    font-size: 20px;
+}
+
+.contscts-message::placeholder {
+    font-family: inherit;
+    color: #bdae82;
+    font-size: 20px;
+}
+ /* footer */
