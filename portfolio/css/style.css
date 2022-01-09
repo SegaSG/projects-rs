@@ -12,7 +12,8 @@ body {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 20px;
-    color: #FFFFFF;    
+    color: #FFFFFF;
+    background-color: #000000;   
 }
 
 a {
@@ -22,7 +23,7 @@ a {
 
 :root {
     --color-gold: #bdae82;
-    --color-black: #000;
+    --color-black: #000000;
     --font1: 60px;
     --font2: 40px;
 }
@@ -37,7 +38,7 @@ a {
     display: flex;
     justify-content: space-between;
     height: 90px;    
-    background: url('../assets/img/header-bg.png');
+    background: url(../assets/img/header-bg.jpg);
     background-repeat: no-repeat;
     background-position: center 0;
     align-items: center;
@@ -97,16 +98,16 @@ a {
 }
 
 
-.hero-container {
-    height: 910px;
-    background-image: url('../assets/img/header-bg.png');
+.hero {
+    height: 820px;
+    background-image: url(../assets/img/header-bg.jpg);
     background-position: center -90px;
     background-repeat: no-repeat;    
 }
 
-.hero {
+.hero-container {
     padding-top: 160px;
-    padding-left: 60px;
+    padding-left: 80px;
 }
 
 .hero-inner {
@@ -129,7 +130,7 @@ a {
     font-family: inherit;
 }
 
-.hero-btn {
+.btn {
     width: 219px;
     height: 54px;
     line-height: 40px;
@@ -141,6 +142,174 @@ a {
     transition: 0.3s;
 }
 
-.hero-btn:hover {
+.btn:hover {
     color: #FFFFFF;
+}
+
+/* section skills */
+.section-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 60px;
+}
+
+.section-box::before {
+    position: absolute;
+    width: 50%;
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #bdae82;
+    top: calc(50% - 1px);    
+}
+
+.title {
+    position: relative;    
+    margin: 0;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 80px;
+    background-color: #000000;    
+}
+
+.skills-title {
+    width: 152px;
+}
+
+.skills-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.skills-item {
+    width: 320px;
+    height: 240px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 62px 50px;
+    text-align: center;    
+}
+.item-text{
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+.item-subtext {
+    text-align: center;
+    font-size: 18px;
+    line-height: 36px;
+}
+.skills-item:nth-child(1) {
+    background-image: url(../assets/svg/camera.svg);
+}
+.skills-item:nth-child(2) {
+    background-image: url(../assets/svg/video.svg); 
+}
+.skills-item:nth-child(3) {
+    background-image: url(../assets/svg/image.svg);
+}
+.skills-item:nth-child(4) {
+    background-image: url(../assets/svg/mic.svg);
+}
+
+/* section portfolio */
+.portfolio-title {
+    width: 221px;
+}
+
+.portfolio-buttons {
+    width: 895px;
+    margin: 0 auto 60px;
+}
+
+.portfolio-button:hover {
+    background-color: #000000;
+    border: 2px solid #bdae82;
+}
+
+.portfolio-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px 25px;
+}
+.portfolio-img {
+    column-gap: 25px;
+}
+/* section video */
+.video-title{
+    width: 154px;
+}
+
+.video-player {
+    position: relative;
+}
+.video-button {
+    position: absolute;
+    top:calc(50% - 69px);
+    left:calc(50% - 69px);
+    background-color: transparent;
+    border: none; 
+    transition: 0.3s; 
+}
+
+.video-button:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    cursor: pointer;
+}
+
+/* section price */
+.price-title {
+    width: 142px;
+}
+
+.price-items {
+    display: flex;
+    justify-content: space-between;
+    width: 1400px;
+    height: 505px;
+}
+.price-item {
+    width: 450px;
+    height: 505px;
+    text-align: center;
+    border: 3px solid var(--color-gold);
+
+}
+.price-level {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 56px;
+    margin:43px 0 20px;
+}
+
+.price-value {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 48px;
+    margin: 0;
+    color: var(--color-gold);
+}
+.price-content{
+    width: 364px;
+    height: 180px;
+    margin: 0 auto 40px;
+}
+
+.price-value{
+    margin-bottom: 20px;
+}
+
+.content-description {
+    display: block;
+    font-size: 18px;
+    line-height: 36px;
+    margin: 0;
 }
