@@ -273,6 +273,7 @@ ul {
 }
 
 .video-player {
+    height: 707px;
     position: relative;
 }
 
