@@ -1,3 +1,5 @@
+// burger menu
+
 const menuBurger = document.querySelector('.menu-burger');
 const menuList = document.querySelector('.menu-list');
 const menu = document.querySelector('.menu');
@@ -5,7 +7,7 @@ const menuLinks = document.querySelectorAll('.menu-link');
 
 menuBurger.addEventListener('click', () => menuBurger.classList.toggle('open'));
 menuBurger.addEventListener('click', () => menuList.classList.toggle('open'));
-
+menuBurger.addEventListener('click', () => document.body.classList.toggle('lock'));
 menuLinks.forEach((el) => el.addEventListener('click', closeMenu));
 menuList.addEventListener('click', closeMenu);
 
@@ -13,8 +15,11 @@ function closeMenu(event) {
     if (event.target.classList.contains('menu-link')) {
         menuBurger.classList.remove('open');
         menuList.classList.remove('open');
+        document.body.toggleClass('lock');
     }
 }
+
+// description
 
 console.log(
     '1. Вёрстка валидная +10: \n'+
