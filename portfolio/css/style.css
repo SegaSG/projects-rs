@@ -112,6 +112,8 @@ ul {
     color: var(--color-gold);
 }
 
+
+
 .hero {
     height: 820px;
     background-image: url(../assets/img/header-bg.jpg);
@@ -290,9 +292,22 @@ ul {
     width: 154px;
 }
 
+.video {
+    
+    background-image: url(../assets/img/video-player.jpg);
+    background-position: center 140px;
+    background-repeat: no-repeat;    
+}
+
+.video-img {
+    max-width: 100%;
+} 
+
 .video-player {
-    height: 707px;
+    max-width: 1400px;
+    min-height: 513px;
     position: relative;
+    margin: 0 auto;
 }
 
 .video-img {
@@ -325,7 +340,7 @@ ul {
 .price-items {
     display: flex;
     justify-content: space-between;
-    width: 1400px;
+    max-width: 1400px;
     height: 505px;    
 }
 
@@ -354,7 +369,7 @@ ul {
 }
 
 .price-content{
-    width: 364px;
+    max-width: 364px;
     height: 180px;
     margin: 0 auto 40px;
 }
@@ -547,7 +562,7 @@ ul {
     body.lock {
         overflow: hidden;
     }
-    
+
     .menu-list {
         position: absolute;
         top: 0;
@@ -729,6 +744,12 @@ ul {
 }
 /* adaptive section Portfolio */
 
+@media (max-width: 1439px){
+    .portfolio-images {
+        justify-content: center;
+
+    }
+}
 @media (max-width: 980px){
     .portfolio-buttons {
         max-width: 445px;
@@ -740,6 +761,7 @@ ul {
     }
     .portfolio-images {
         justify-content: center;
+        margin-bottom: 90px;
       }
 }
 
@@ -756,7 +778,58 @@ ul {
     .portfolio-buttons{
         margin-bottom: 25px;
     }
+
     .skills-items {
         margin-bottom: 50px;
     }
+}
+
+/* adaptive section Video */
+
+@media (max-width: 768px) {
+    .video {    
+        background-image: url(../assets/img/video-player-small.jpg);
+        background-position: center 130px;
+    }
+    
+    .video-button {
+        top: 29%;
+        left:calc(100%-39%);
+        
+    }
+    .video-img {
+        transform: scale(0.5);
+    }
+}
+
+/* adaptive section Price */
+
+@media (max-width: 1439px) {
+    .price-items {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 50px;
+    }   
+}
+
+@media (max-width: 768px) {
+    .price-title {
+        width: 122px;
+    }
+
+    .section-box-price{
+        margin-bottom: 52px;
+    }
+
+    .price-item {
+        max-width: 420px;
+        padding: 0 5px;       
+    }
+    
+}
+
+/* adaptive section Contacts */
+
+@media (max-width: 1439px) {
+     
 }
