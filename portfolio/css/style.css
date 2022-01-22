@@ -15,7 +15,6 @@ body {
     color: #FFFFFF;
     background-color: #000000;
     
-    
 }
 
 a {
@@ -385,6 +384,7 @@ ul {
     margin: 0;
 }
  /* section contacts */
+
  .contacts {
     background-image: url(../assets/img/contacts-bg.jpg);
     background-size: auto 700px;
@@ -422,6 +422,7 @@ ul {
     padding-left: 18px;
     border: 2px solid var(--color-gold);
     background: rgba(0, 0, 0, 0.5);
+    caret-color: var(--color-gold);
 }
 
 .contacts-tel {
@@ -431,6 +432,7 @@ ul {
     padding-left: 18px;
     border: 2px solid var(--color-gold);
     background: rgba(0, 0, 0, 0.5);
+    caret-color: var(--color-gold);
 }
 
 .contacts-message {
@@ -442,6 +444,7 @@ ul {
     border: 2px solid var(--color-gold);
     background: rgba(0, 0, 0, 0.5);
     resize: none;
+    caret-color: var(--color-gold);
 }
 
 ::placeholder {
@@ -467,6 +470,7 @@ ul {
 }
 
 .git-list{
+    width: 170px;
     display: flex;
     justify-content: space-between;
     padding: 0;
@@ -563,6 +567,18 @@ ul {
         overflow: hidden;
     }
 
+    .menu-list.open:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #000;
+        z-index: -10;
+        opacity: 0.5;
+    }
+
     .menu-list {
         position: absolute;
         top: 0;
@@ -571,14 +587,11 @@ ul {
         height: 100vh;
         display: block;
         padding-left: 127px;
-        padding-top: 140px;
+        padding-top: 144px;
         background-color: #000000;
         transition: 0.9s;
         z-index: 10;
-       
-    }
-    .body {
-        overflow: hidden;
+        overflow: auto;
     }
 
     .menu {
@@ -692,6 +705,17 @@ ul {
 }
 
 /* adaptive section Skills */
+@media (max-width: 1319px) {
+    .skills-items {
+        justify-content: space-around;
+    }
+
+    .item-text {
+        margin-top: 80px;
+        margin-bottom: 20px;
+        line-height: 40px;
+    }
+}
 
 @media (max-width: 768px) {
     .section-box {
@@ -710,21 +734,15 @@ ul {
     }
 
     .skills-items {
+        justify-content: space-between;
         margin-bottom: 130px;
     }
 
     .skills-item {
         max-width: 300px;
-        height: 224px;
-        
+        height: 224px;        
     }
-
-    .item-text {
-        margin-top: 80px;
-        margin-bottom: 20px;
-        line-height: 40px;
-    }
-
+    
     .item-subtext {
         max-width: 280px;
         height: 44px;
@@ -742,7 +760,7 @@ ul {
     }
 }
 
-@media (max-width: 723px) {
+@media (max-width: 740px) {
     .skills-items {
         justify-content: space-around;
     }
@@ -797,6 +815,7 @@ ul {
     .video {    
         background-image: url(../assets/img/video-player-small.jpg);
         background-position: center 130px;
+        background-size: auto auto;
     }
     
     .video-button {
@@ -833,7 +852,6 @@ ul {
     }    
 }
 
-
 @media (max-width: 768px) {
     .price-title {
         width: 122px;
@@ -844,10 +862,17 @@ ul {
     }
 
     .price-item {
-        max-width: 100%;
+        width: 420px;
         padding: 0 5px;       
     }
+
     .price-button {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .price-item {
         max-width: 100%;
     }
 }
@@ -859,10 +884,11 @@ ul {
         text-align: center;
         padding-top: 50px;
     }
+
     .contacts {
         background-image: url(../assets/img/contacts-small.jpg);
         background-size: auto 600px;
-        height: 600px;
+        height: 600px;    
     }
 
     .contacts-title {
@@ -871,11 +897,45 @@ ul {
     }
          
 }
+
 @media (max-width: 568px) {
     .contacts-message, .contacts-tel, .contacts-email, .contacts-title, .contacts-content {
         max-width: 100%;
     }
     .contacts-button {
         max-width: 100%;
+    }
+}
+
+/* adaptive footer */
+
+@media (max-width: 768px) {
+    .info {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        align-items: center;
+        padding-top: 14px;
+    }
+    .info-git {
+        margin: 0 auto;
+        align-items: center;
+        margin-bottom: 4px;
+        padding-left: 4px;
+    }
+
+    .info-school {
+        margin: 0 auto;
+        padding: 0;
+        align-items: center;
+    }
+
+    .info-contacts {
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .contacts-list {
+        padding: 0;
     }
 }
