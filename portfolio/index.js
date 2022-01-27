@@ -1,5 +1,4 @@
 // burger menu
-
 const menuBurger = document.querySelector('.menu-burger');
 const menuList = document.querySelector('.menu-list');
 const menu = document.querySelector('.menu');
@@ -19,7 +18,48 @@ function closeMenu(event) {
         document.body.classList.remove('lock');
     }
 
-}
+};
+
+// Theme light-dark
+
+document.querySelector('.themetoggle').addEventListener('click', (e) => {
+    e.preventDefault();
+    if (localStorage.getItem('theme') === 'dark'){
+        localStorage.removeItem('theme');
+    } else {
+        localStorage.setItem('theme', 'dark');
+    }
+    addDarkClassToHtml ();
+});
+
+function addDarkClassToHtml () {
+    try {
+        if (localStorage.getItem('theme') === 'dark'){
+            document.querySelector('.skills').classList.add('dark');
+            document.querySelector('.portfolio').classList.add('dark');
+            document.querySelector('.video').classList.add('dark');
+            document.querySelector('.price').classList.add('dark');
+            document.querySelector('.title').classList.add('dark'); 
+            document.querySelector('.menu-list').classList.add('dark');            
+            document.querySelector('.themetoggle img').src = './assets/svg/theme-light.svg';
+
+        } else {
+            document.querySelector('.skills').classList.remove('dark');
+            document.querySelector('.portfolio').classList.remove('dark');
+            document.querySelector('.video').classList.remove('dark');
+            document.querySelector('.price').classList.remove('dark');
+            document.querySelector('.title').classList.remove('dark');
+            document.querySelector('.menu-list').classList.remove('dark');
+            document.querySelector('.themetoggle img').src = './assets/svg/theme-dark.svg';  
+        }   
+        
+    } catch (err) {};
+};
+addDarkClassToHtml ();
+
+
+
+
 
 // description
 

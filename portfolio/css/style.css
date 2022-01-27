@@ -112,7 +112,6 @@ ul {
 }
 
 
-
 .hero {
     height: 820px;
     background-image: url(../assets/img/header-bg.jpg);
@@ -164,12 +163,17 @@ ul {
 }
 
 /* section skills */
+.skills {
+    min-height: 482px;
+    padding-top: 100px;
+    margin: 0 auto;
+    background-color: #000000;
+}
 
 .section-box {
     position: relative;
     display: flex;
-    justify-content: center;
-    margin-top: 100px;
+    justify-content: center;    
     margin-bottom: 60px;
 }
 
@@ -249,6 +253,11 @@ ul {
 
 /* section portfolio */
 
+.portfolio {
+   min-height: 1500px;
+   padding-top: 100px;
+}
+
 .portfolio-title {
     width: 221px;
 }
@@ -289,12 +298,14 @@ ul {
 /* section video */
 .video-title{
     width: 154px;
+    
 }
 
 .video {
-    
+    min-height: 945px;
+    padding-top: 100px;
     background-image: url(../assets/img/video-player.jpg);
-    background-position: center 140px;
+    background-position: center 240px;
     background-repeat: no-repeat;    
 }
 
@@ -304,7 +315,7 @@ ul {
 
 .video-player {
     max-width: 1400px;
-    min-height: 707px;
+    min-height: 705px;
     position: relative;
     margin: 0 auto;
 }
@@ -329,7 +340,8 @@ ul {
 
 /* section price */
 .price {
-    height: 745px;
+    height: 845px;
+    padding-top: 100px;
 }
 
 .price-title {
@@ -560,6 +572,34 @@ ul {
     transform: translateY(-13px) rotate(-45deg);
 }
 
+/* theme light-dark */
+.theme {
+    margin-left: 30px;
+}
+
+.theme-link{
+    transition: 0.3s;
+}
+
+.theme-link:hover{
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.dark.skills, .dark.portfolio, .dark.video, .dark.price {
+    background-color: #FFFFFF;
+    color: var(--color-black);
+}
+
+.dark h2 {
+    background-color: #FFFFFF;
+    color: var(--color-black);
+}
+
+.dark .section-box::before {    
+    background-color: var(--color-black);
+}
+
+
 /* Media Queries */
 
 @media (max-width: 768px){
@@ -578,6 +618,7 @@ ul {
         z-index: -10;
         opacity: 0.5;
     }
+   
 
     .menu-list {
         position: absolute;
@@ -592,6 +633,12 @@ ul {
         transition: 0.9s;
         z-index: 10;
         overflow: auto;
+    }
+
+    .menu-list.dark.open  {
+        background-color: #FFFFFF;
+        color: var(--color-black);
+        z-index: auto;   
     }
 
     .menu {
@@ -644,7 +691,7 @@ ul {
     }
      
     .hero {
-        height: 590px;
+        height: 500px;
         background-image: url('../assets/img/bg-small.jpg');
     }
 
@@ -718,6 +765,9 @@ ul {
 }
 
 @media (max-width: 768px) {
+    .skills {
+        padding-top: 90px;
+    }
     .section-box {
         margin-top: -10px;
         margin-bottom: 44px;
@@ -735,7 +785,7 @@ ul {
 
     .skills-items {
         justify-content: space-between;
-        margin-bottom: 130px;
+        margin-bottom: 0px;
     }
 
     .skills-item {
@@ -785,11 +835,14 @@ ul {
 
     .portfolio-images {
         justify-content: center;
-        margin-bottom: 90px;
+        margin-bottom: 0px;
       }
 }
 
 @media (max-width: 768px) {
+    .portfolio{
+        padding-top: 130px;
+    }
     .portfolio-title {
         max-width: 185px;
     }
@@ -805,16 +858,18 @@ ul {
     }
 
     .skills-items {
-        margin-bottom: 50px;
+        margin-bottom: px;
     }
 }
 
 /* adaptive section Video */
 
 @media (max-width: 768px) {
-    .video {    
+    .video {
+        padding-top: 90px;
+        min-height: 628px;        
         background-image: url(../assets/img/video-player-small.jpg);
-        background-position: center 130px;
+        background-position: center 210px;
         background-size: auto auto;
     }
     
@@ -848,7 +903,8 @@ ul {
 
 @media (max-width: 989px) {
     .price {
-        height: 1827px;
+        height: 1825px;
+        padding-top: 0;
     }    
 }
 
@@ -893,7 +949,7 @@ ul {
 
     .contacts-title {
         font-size: 32px;
-        margin-bottom: 31px;        
+        margin-bottom: 35px;        
     }
          
 }
