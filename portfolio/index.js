@@ -57,9 +57,36 @@ function addDarkClassToHtml () {
 };
 addDarkClassToHtml ();
 
+// change images in section portfolio
 
+const portfolioBtn = document.querySelectorAll('.portfolio-button');
+const portfolioBtns = document.querySelector('.portfolio-buttons');
+const portfolioImages = document.querySelectorAll('.portfolio-img');
 
+function changeImage(event) {
+    if (event.target.classList.contains('portfolio-button')) {
+        console.log(event.target);   
+        portfolioImages.forEach((img, index) => img.src = `./assets/img/${event.target.dataset.season}/${index + 1}.jpg`);
+        portfolioBtn.forEach((button) => button.classList.remove('active'));
+        event.target.classList.add('active');
+    }
+}
+portfolioBtns.addEventListener ('click', changeImage);
+   
 
+// translate en-ru
+const lang_ru = document.querySelector('.ru');
+const lang_en = document.querySelector('.en');
+function getTranslate(language){
+    let i18 = document.querySelectorAll(['data-i18']);
+    i18.forEach(el => {
+        el.textContent = i180[language][el.dataset.i18];
+    });
+    console.log('done');
+};
+
+lang_ru.addEventListener('click', getTranslate('ru'));
+lang_en.addEventListener('click', getTranslate('en'));
 
 // description
 
