@@ -93,25 +93,25 @@ ul {
     color: var(--color-gold);
 }
 
-.ru-link {
+.ru {    
     font-weight: 700;
     font-size: 20px;
-    line-height: 50px;
+    line-height: 20px;
     transition: 0.3s;    
 }
 
-.en-link {
+.en {    
     font-weight: 700;
     font-size: 20px;
-    line-height: 50px;
+    line-height: 20px;
     transition: 0.3s;
 }
 
-.en-link:hover {
+.en:hover {
     color: var(--color-gold);
 }
 
-.ru-link:hover {
+.ru:hover {
     color: var(--color-gold);
 }
 
@@ -204,7 +204,7 @@ ul {
 }
 
 .skills-title {
-    width: 152px;
+    width: 292px;
 }
 
 .skills-items {
@@ -263,7 +263,7 @@ ul {
 }
 
 .portfolio-title {
-    width: 221px;
+    width: 261px;
 }
 
 .portfolio-buttons {
@@ -515,7 +515,11 @@ ul {
 }
 
 .contacts-img {
-    transition: 0.3s;    
+    transition: 0.3s;
+    height: 32px;    
+}
+.contacts-link{
+    height: 32px;
 }
 
 .contacts-img:hover {
@@ -600,10 +604,66 @@ ul {
     background-color: var(--color-black);
 }
 
-.portfolio-button.active {
+.dark.portfolio-button {
     color: #000;
+    background-color: #FFFFFF;
+}
+.dark.portfolio-button:hover {
+    color: #FFFFFF;
+    background-color: var(--color-gold)
+}
+
+.portfolio-button.active {
+    color: #FFFFFF;
     background-color: #bdae82;
-  }
+}
+.dark.menu-burger.open > span {
+    background-color: #000000;
+
+}
+.active-languages{
+    color: var(--color-gold);
+}
+
+/* effect buttons */
+.btn {
+    position: relative;
+    overflow: hidden;    
+}
+
+.btn:focus {
+    outline: none;
+}
+  
+.btn .circle {
+    position: absolute;
+    background-color: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: scale 0.5s ease-out;
+}
+  
+@keyframes scale {
+    to {
+      transform: translate(-50%, -50%) scale(3);
+      opacity: 0;
+    }
+}
+
+a:hover, a:focus{
+	box-shadow: 0 0.5em 0.5em -0.4em var(--color-gold);
+	transform: translatey(-0.15em);
+}
+
+.btn:hover, .btn:focus{
+	box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+	animation: pulse 1s;
+}
+@keyframes pulse{
+	0%{box-shadow: 0 0 0 0 var(--color-gold)}
+}
 
 /* Media Queries */
 
@@ -701,7 +761,7 @@ ul {
     }
 
     .hero-name {
-        font-size: 32px;
+        font-size: 25px;
         line-height: 64px;
     }
 
@@ -753,7 +813,15 @@ ul {
     .menu-list{
         padding-left: 60px;
         margin: 0 auto;
-    }    
+    }
+    
+    .theme {
+        margin-left: 10px;
+    }
+    .container {
+        width: calc(100% - 20px);
+        justify-content: start;
+    }
 }
 
 /* adaptive section Skills */
@@ -781,7 +849,7 @@ ul {
 
     .title {
         font-size: 32px;
-        max-width: 131px;
+        max-width: 171px;
     }
 
     .section-box::before {
@@ -849,7 +917,7 @@ ul {
         padding-top: 130px;
     }
     .portfolio-title {
-        max-width: 185px;
+        max-width: 215px;
     }
 
     .portfolio-img {
@@ -902,7 +970,7 @@ ul {
     }
 
     .price {
-        height: 1285px;
+        height: 1385px;
     }    
 }
 
@@ -937,6 +1005,12 @@ ul {
         max-width: 100%;
     }
 }
+@media (max-width: 480px) {
+    .content-description {
+        font-size: 16px;
+    }
+}
+
 /* adaptive section Contacts */
 
 @media (max-width: 768px) {
