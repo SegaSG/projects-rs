@@ -93,24 +93,27 @@ ul {
     color: var(--color-gold);
 }
 
-.ru-link {
+.ru {    
     font-weight: 700;
     font-size: 20px;
-    line-height: 50px;
+    line-height: 20px;
     transition: 0.3s;    
 }
 
-.en-link {
+.en {    
     font-weight: 700;
     font-size: 20px;
-    line-height: 50px;
+    line-height: 20px;
+    transition: 0.3s;
+}
+
+.en:hover {
     color: var(--color-gold);
 }
 
-.ru-link:hover {
+.ru:hover {
     color: var(--color-gold);
 }
-
 
 
 .hero {
@@ -164,12 +167,17 @@ ul {
 }
 
 /* section skills */
+.skills {
+    min-height: 482px;
+    padding-top: 100px;
+    margin: 0 auto;
+    background-color: #000000;
+}
 
 .section-box {
     position: relative;
     display: flex;
-    justify-content: center;
-    margin-top: 100px;
+    justify-content: center;    
     margin-bottom: 60px;
 }
 
@@ -196,7 +204,7 @@ ul {
 }
 
 .skills-title {
-    width: 152px;
+    width: 292px;
 }
 
 .skills-items {
@@ -249,8 +257,13 @@ ul {
 
 /* section portfolio */
 
+.portfolio {
+   min-height: 1500px;
+   padding-top: 100px;
+}
+
 .portfolio-title {
-    width: 221px;
+    width: 261px;
 }
 
 .portfolio-buttons {
@@ -269,10 +282,7 @@ ul {
     color: #FFFFFF;
 }
 
-.portfolio-button:nth-child(4) {
-    background-color: var(--color-gold);
-    color: #000000;
-}
+
 .portfolio-button:nth-child(4):hover {
     color: #FFFFFF;
 }
@@ -289,12 +299,14 @@ ul {
 /* section video */
 .video-title{
     width: 154px;
+    
 }
 
 .video {
-    
+    min-height: 945px;
+    padding-top: 100px;
     background-image: url(../assets/img/video-player.jpg);
-    background-position: center 140px;
+    background-position: center 240px;
     background-repeat: no-repeat;    
 }
 
@@ -304,7 +316,7 @@ ul {
 
 .video-player {
     max-width: 1400px;
-    min-height: 707px;
+    min-height: 705px;
     position: relative;
     margin: 0 auto;
 }
@@ -329,7 +341,8 @@ ul {
 
 /* section price */
 .price {
-    height: 745px;
+    height: 845px;
+    padding-top: 100px;
 }
 
 .price-title {
@@ -502,7 +515,11 @@ ul {
 }
 
 .contacts-img {
-    transition: 0.3s;    
+    transition: 0.3s;
+    height: 32px;    
+}
+.contacts-link{
+    height: 32px;
 }
 
 .contacts-img:hover {
@@ -560,6 +577,94 @@ ul {
     transform: translateY(-13px) rotate(-45deg);
 }
 
+/* theme light-dark */
+.theme {
+    margin-left: 30px;
+}
+
+.theme-link{
+    transition: 0.3s;
+}
+
+.theme-link:hover{
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.dark.skills, .dark.portfolio, .dark.video, .dark.price {
+    background-color: #FFFFFF;
+    color: var(--color-black);
+}
+
+.dark h2 {
+    background-color: #FFFFFF;
+    color: var(--color-black);
+}
+
+.dark .section-box::before {    
+    background-color: var(--color-black);
+}
+
+.dark.portfolio-button {
+    color: #000;
+    background-color: #FFFFFF;
+}
+.dark.portfolio-button:hover {
+    color: #FFFFFF;
+    background-color: var(--color-gold)
+}
+
+.portfolio-button.active {
+    color: #FFFFFF;
+    background-color: #bdae82;
+}
+.dark.menu-burger.open > span {
+    background-color: #000000;
+
+}
+.active-languages{
+    color: var(--color-gold);
+}
+
+/* effect buttons */
+.btn {
+    position: relative;
+    overflow: hidden;    
+}
+
+.btn:focus {
+    outline: none;
+}
+  
+.btn .circle {
+    position: absolute;
+    background-color: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: scale 0.5s ease-out;
+}
+  
+@keyframes scale {
+    to {
+      transform: translate(-50%, -50%) scale(3);
+      opacity: 0;
+    }
+}
+
+a:hover, a:focus{
+	box-shadow: 0 0.5em 0.5em -0.4em var(--color-gold);
+	transform: translatey(-0.15em);
+}
+
+.btn:hover, .btn:focus{
+	box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+	animation: pulse 1s;
+}
+@keyframes pulse{
+	0%{box-shadow: 0 0 0 0 var(--color-gold)}
+}
+
 /* Media Queries */
 
 @media (max-width: 768px){
@@ -578,6 +683,7 @@ ul {
         z-index: -10;
         opacity: 0.5;
     }
+   
 
     .menu-list {
         position: absolute;
@@ -592,6 +698,12 @@ ul {
         transition: 0.9s;
         z-index: 10;
         overflow: auto;
+    }
+
+    .menu-list.dark.open  {
+        background-color: #FFFFFF;
+        color: var(--color-black);
+        z-index: auto;   
     }
 
     .menu {
@@ -644,12 +756,12 @@ ul {
     }
      
     .hero {
-        height: 590px;
+        height: 500px;
         background-image: url('../assets/img/bg-small.jpg');
     }
 
     .hero-name {
-        font-size: 32px;
+        font-size: 25px;
         line-height: 64px;
     }
 
@@ -701,7 +813,15 @@ ul {
     .menu-list{
         padding-left: 60px;
         margin: 0 auto;
-    }    
+    }
+    
+    .theme {
+        margin-left: 10px;
+    }
+    .container {
+        width: calc(100% - 20px);
+        justify-content: start;
+    }
 }
 
 /* adaptive section Skills */
@@ -718,6 +838,9 @@ ul {
 }
 
 @media (max-width: 768px) {
+    .skills {
+        padding-top: 90px;
+    }
     .section-box {
         margin-top: -10px;
         margin-bottom: 44px;
@@ -726,7 +849,7 @@ ul {
 
     .title {
         font-size: 32px;
-        max-width: 131px;
+        max-width: 171px;
     }
 
     .section-box::before {
@@ -735,7 +858,7 @@ ul {
 
     .skills-items {
         justify-content: space-between;
-        margin-bottom: 130px;
+        margin-bottom: 0px;
     }
 
     .skills-item {
@@ -785,13 +908,16 @@ ul {
 
     .portfolio-images {
         justify-content: center;
-        margin-bottom: 90px;
+        margin-bottom: 0px;
       }
 }
 
 @media (max-width: 768px) {
+    .portfolio{
+        padding-top: 130px;
+    }
     .portfolio-title {
-        max-width: 185px;
+        max-width: 215px;
     }
 
     .portfolio-img {
@@ -805,16 +931,18 @@ ul {
     }
 
     .skills-items {
-        margin-bottom: 50px;
+        margin-bottom: px;
     }
 }
 
 /* adaptive section Video */
 
 @media (max-width: 768px) {
-    .video {    
+    .video {
+        padding-top: 90px;
+        min-height: 628px;        
         background-image: url(../assets/img/video-player-small.jpg);
-        background-position: center 130px;
+        background-position: center 210px;
         background-size: auto auto;
     }
     
@@ -842,13 +970,14 @@ ul {
     }
 
     .price {
-        height: 1285px;
+        height: 1385px;
     }    
 }
 
 @media (max-width: 989px) {
     .price {
-        height: 1827px;
+        height: 1825px;
+        padding-top: 0;
     }    
 }
 
@@ -876,6 +1005,12 @@ ul {
         max-width: 100%;
     }
 }
+@media (max-width: 480px) {
+    .content-description {
+        font-size: 16px;
+    }
+}
+
 /* adaptive section Contacts */
 
 @media (max-width: 768px) {
@@ -893,7 +1028,7 @@ ul {
 
     .contacts-title {
         font-size: 32px;
-        margin-bottom: 31px;        
+        margin-bottom: 35px;        
     }
          
 }
