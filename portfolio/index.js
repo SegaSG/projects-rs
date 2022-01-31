@@ -179,14 +179,14 @@ function getTranslate(lang){
     if (lang === 'ru') {
         langEn.classList.remove('active-languages');
         langRu.classList.add('active-languages');
-       
+        document.querySelectorAll('[data-i18]').forEach((el) => el.textContent = i18Obj[lang][el.dataset.i18]);       
     }
     else {
         langEn.classList.add('active-languages');
         langRu.classList.remove('active-languages');
-        
+        document.querySelectorAll('[data-i18]').forEach((el) => el.textContent = i18Obj[lang][el.dataset.i18]);        
     }
-    document.querySelectorAll('[data-i18]').forEach((el) => el.textContent = i18Obj[lang][el.dataset.i18]);  
+    
 };
 
 langRu.addEventListener('click',  () => getTranslate('ru'));
@@ -203,11 +203,9 @@ function getLocalStorage() {
     if(localStorage.getItem('lang')) {
       localStorage.getItem('lang')
       getTranslate(lang);
-    }   
+    }
 }
 window.addEventListener('load', getLocalStorage);
-
- 
 
 
 // effect button
