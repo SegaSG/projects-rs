@@ -1,94 +1,63 @@
-const song = document.querySelector('.wrapper-song');
-const playerImg = document.querySelector('.player-img');
-const playerBg = document.querySelector('.player-bg');
-const songArtist = document.querySelector('.player-artist');
-const songTitle = document.querySelector('.player-title');
-const progressBar = document.querySelector('.player-progress');
-const currentTime = document.querySelector('.player-current');
-const durationTime = document.querySelector('.player-duration');
 
-let play = document.querySelector('.player-play');
-let pause = document.querySelector('.player-pause');
-let next = document.querySelector('.player-next');
-let back = document.querySelector('.player-back');
-let songIndex = 0;
+const songs = ["./assets/audio/Coldplay - The Scientist.mp3", "./assets/audio/Imagine Dragons - Demons.mp3", "./assets/audio/Justin Bieber - Ghost.mp3"];
+const poster = ["./assets/img/venezia-bg.jpg", "./assets/img/venezia-1-bg.jpg", "./assets/img/bridge-bg.jpg"];
+const titles = ["Coldplay - The Scientist", "Imagine Dragons - Demons", "Justin Bieber - Ghost"]
 
-const songs = [
-  './assets/audio/Coldplay - The Scientist.mp3',
-  './assets/audio/Imagine Dragons - Demons.mp3',
-  './assets/audio/Justin Bieber - Ghost.mp3'
-];
+const songTitle = document.getElementById("songTitle");
+const fillBar = document.getElementById("fill");
 
-const images = [
-  './assets/img/venezia-bg.jpg',
-  './assets/img/venezia-1-bg.jpg',
-  './assets/img/bridge-bg.jpg'
-];
+const song = new Audio();
+let currentSong = 0;
+songTitle.textContent = titles[currentSong];
 
-const songArtists = ['Coldplay', 'Imagine Dragons', 'Justin Bieber'];
-const songTitles = ['The Scientist', 'Demons', 'Ghost'];
+function playSong(){
 
-let playing = true;
+   song.src = songs[currentSong];
 
-function pausePlay() {
-  if (playing) {
-    play.style.display = "none";
-    pause.style.display = "block";
-    playerBg.style.transform = "scale(1.25)";
-    song.play();
-    playing = false;
-  } else {
-    pause.style.display = "none";
-    play.style.display = "block";
-    playerBg.style.transform = "scale(1)";
-    song.pause();
-    playing = true;
-  }
+   songTitle.textContent = titles[currentSong];
+
+   song.play();
 }
-
-play.addEventListener("click", pausePlay);
-pause.addEventListener("click", pausePlay);
-
-song.addEventListener("ended", nextSong);
-
-function nextSong() {
-  songIndex++;
-  if (songIndex > songs.length - 1) {
-    songIndex = 0;
+function playOrPauseSong(){
+  if(song.paused){
+     playSong();
+      document.querySelector(".player-buttons-play img").setAttribute("src","./assets/img/free-icon-pause.png");
+  } else{
+      song.pause();
+      document.querySelector(".player-buttons-play img").setAttribute("src","./assets/img/free-icon-play.png");
+    }
   }
 
-  song.src = songs[songIndex];
-  playerImg.src = images[songIndex];
-  playerBg.src = images[songIndex];
-  songArtist.textContent = songArtists[songIndex];
-  songTitle.textContent = songTitles[songIndex];
-
-  playing = true;
-  pausePlay();
-}
-
-next.addEventListener("click", nextSong);
-
-function backSong() {
-  songIndex--;
-  if (songIndex < 0) {
-    songIndex = song.length - 1;
+function next(){
+  currentSong++;
+  if(currentSong > songs.length - 1){
+    currentSong = 0;
   }
-  song.src = songs[songIndex];
-  playerImg.src = images[songIndex];
-  playerBg.src = images[songIndex];
-  songArtist.textContent = songArtists[songIndex];
-  songTitle.textContent = songTitles[songIndex];
-  playing = true;
-  pausePlay();
+  playSong();
+  document.querySelector(".player-buttons-play img").setAttribute("src","./assets/img/free-icon-pause.png");
+  document.querySelector(".content-image img").setAttribute("src", poster[currentSong]);
+  document.querySelector(".background-image").setAttribute("src", poster[currentSong]);
 }
 
-back.addEventListener("click", backSong);
+function pre(){
+    currentSong--;
+  if(currentSong < 0){
+    currentSong = songs.length - 1;
+  }
+    playSong();
+    document.querySelector(".player-buttons-play img").setAttribute("src","./assets/img/free-icon-pause.png");
+    document.querySelector(".content-image img").setAttribute("src",poster[currentSong]);
+    document.querySelector(".background-image").setAttribute("src",poster[currentSong]);
+}
+
+const progressBar = document.getElementById("progressBar");
+const currentTime = document.getElementById("currentTime");
+const durationTime = document.getElementById("durationTime");
+
 
 function progressValue() {
   progressBar.max = song.duration;
   progressBar.value = song.currentTime;
-
   currentTime.textContent = formatTime(song.currentTime);
   durationTime.textContent = formatTime(song.duration);
 }
@@ -109,3 +78,15 @@ function changeProgressBar() {
 }
 
 progressBar.addEventListener("click", changeProgressBar);
+
+
+progressBar.addEventListener('input', function() {
+  const value = this.value;
+  this.style.background = `linear-gradient(to right, #ffff00 0%, #ffff00 ${value}%, #fff ${value}%, #fff 0%)`
+})
+
+
+  
+// document.getElementById("jcp-volume").mousemove(function(){
+//     song.volume = parseFloat(this.value / 10);
+//  });
