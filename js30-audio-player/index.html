@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio-player</title>
+    <link rel="icon" href="./assets/img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/normolize.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  
+<header class="background">
+  <div class="layer"></div>
+  <img class="background-image" src="./assets/img/venezia-bg.jpg" alt="background-img"/>
+</header>
+  
+
+<div class="main-content">
+    <div class="content-image">
+        <img src="./assets/img/venezia-bg.jpg" alt="content-img"/>
+    </div>
+    
+    <div class="player">
+        <div class="player-progress">
+            <!-- <input id="jcp-volume" type="range" min="0" max="10" value="5" step="0.1" /> -->
+            <div class="player-time">
+                <div class="current-time" id="currentTime"></div>
+                <input class="player-progress-bar" type="range" id="progressBar" min="0" max="" value=""/>
+                <div class="duration-time" id="durationTime"></div>
+                
+            </div>
+        </div>    
+        <div class="player-song"  id="songTitle">Coldplay - <span class="player-name">The Scientist</span></div>
+        <div class="player-buttons" id="buttons">
+            <button class="player-buttons-pre" id="pre" onclick="pre()"><img class="pre-btn" src="./assets/img/angle-square-right.png" width="30" alt="pre-btn"/></button>
+            <button class="player-buttons-play" id="play" onclick="playOrPauseSong()"><img class="play-btn" src="./assets/img/free-icon-play.png" width="30" alt="play-btn"/></button>
+            <button class="player-buttons-next" id="next" onclick="next()"><img class="next-btn" src="./assets/img/angle-square-left.png" width="30" alt="next-btn"/></button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-github">
+                    <a class="footer-github-link" href="https://github.com/SegaSG">
+                        <img class="footer-github-img" src="./assets/img/github-footer.png" alt="github" width="30">
+                    </a>
+                </div>
+                <div class="footer-copyright">
+                    <h5 class="footer-copyright-text">2022</h5>
+                </div>
+                <div class="footer-rsschool">
+                    <a class="footer-rsschool-link" href="https://rs.school/js/">
+                        <img class="footer-rsschool-img" src="./assets/img/rs_school-img.png" alt="rsschool" width="50">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="./index.js"></script>
+</body>
+</html>
