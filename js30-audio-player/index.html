@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio-player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./css/normolize.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <img class = "wrapper-bg" src="./assets/img/venezia-bg.jpg" alt="Coldplay - The Scientist"/>
+    <audio class="wrapper-song" src="./assets/audio/Coldplay - The Scientist.mp3"></audio>
+  </div>
+  
+  <div class="player">
+    <img  class="player-bg" src="./assets/img/venezia-bg.jpg" alt="Coldplay - The Scientist"/>
+  
+    <div class="player-box">
+      <div class="player-items">
+        <img class="player-play" src="./assets/img/free-icon-play.png" alt="play-img" width="40">
+        <img class="player-pause" src="./assets/img/free-icon-pause.png" alt="pause-img" width="40">
+      </div>
+      <div class="player-info">
+        <div class="player-artist">Coldplay</div>
+        <div class="player-title">The Scientist</div>
+      </div>
+      <div class="player-change">
+        <img class="player-next" src="./assets/img/angle-square-left.png" alt="next-img" width="40">
+        <img class="player-back" src="./assets/img/angle-square-right.png" alt="back-img" width="40">
+      </div>
+      <div class="progress">
+        <input class="player-progress" type="range"  min="0" max="" value="0" />
+      </div>
+      <div class="player-time">
+        <div class="player-current"></div>
+        <div class="player-duration"></div>
+      </div>
+    </div>
+  </div>
+    <script src="./index.js"></script>
+</body>
+</html>
